@@ -35,10 +35,10 @@
     /*** Server-specific settings ***/
 
     define('MYSQL_DB', 'psychomorph');
-    define('IMAGEBASEDIR', '/path/to/images/');
-    define('MYSQL_HOST', 'my.host.name');
-    define('MYSQL_USER', 'my_user');
-    define('MYSQL_PSWD', 'my_password');
+    define('IMAGEBASEDIR', '/opt/assets/webmorph_images');
+    // define('MYSQL_HOST', 'my.host.name');
+    define('MYSQL_USER', 'root');
+    // define('MYSQL_PSWD', '');
     define('TOMCAT', "/usr/local/tomcat/webapps/");
 
     /*** user agent ***/
