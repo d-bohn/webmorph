@@ -36,9 +36,9 @@
 
     define('MYSQL_DB', 'psychomorph');
     define('IMAGEBASEDIR', '/opt/assets/webmorph_images');
-    // define('MYSQL_HOST', 'my.host.name');
+    define('MYSQL_HOST', '662c93c59b2f');
     define('MYSQL_USER', 'root');
-    // define('MYSQL_PSWD', '');
+    define('MYSQL_PSWD', 'password');
     define('TOMCAT', "/usr/local/tomcat/webapps/");
 
     /*** user agent ***/
