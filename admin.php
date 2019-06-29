@@ -6,14 +6,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/include/main_func.php';
 /* !Display Page */
 /***************************************************/
 
-if ($_SESSION['user_id'] != 1) { 
-    header('Location: /');
-    exit;
-}
+// if ($_SESSION['user_id'] != 1) {
+//     header('Location: /');
+//     exit;
+// }
 
 ?><!DOCTYPE html>
 
-<html xmlns:fb='http://www.facebook.com/2008/fbml' lang='en'>
+<!-- <html xmlns:fb='http://www.facebook.com/2008/fbml' lang='en'> -->
+<html>
 <head>
     <title>WebMorph Admin</title>
     <meta charset='utf-8'>
@@ -59,8 +60,8 @@ if ($_SESSION['user_id'] != 1) {
 
     <div id="usertable">
 <?php
-    $q = new myQuery('SELECT user.id as ID, 
-                             CONCAT(lastname, ", ", firstname) as Name, 
+    $q = new myQuery('SELECT user.id as ID,
+                             CONCAT(lastname, ", ", firstname) as Name,
                              IF(status+0<3, CONCAT(email, "<br><span class=\'smallnote\'>",reason,"</span>"), email) as Email,
                              status,
                              DATE(regdate) as "Date Registered",
@@ -79,13 +80,13 @@ if ($_SESSION['user_id'] != 1) {
 
 <!-- !Javascripts for this page -->
 
-<script src='<?= JQUERY ?>'></script> 
+<script src='<?= JQUERY ?>'></script>
 <script src='<?= JQUERYUI ?>'></script>
 <script src='/include/js/psychomorph/functions.js'></script>
 
 
 <script>
-    
+
     $('#add_new_user').button().click( function() {
         // register a new user
         $.ajax({
@@ -107,7 +108,7 @@ if ($_SESSION['user_id'] != 1) {
             }
         });
     });
-    
+
     $('span.tinybutton').click( function() {
         var authType = this.innerHTML == "AUTH" ? 'user' : 'disabled';
         var userID = $(this).closest('tr').find('td:eq(0)').text();
@@ -115,9 +116,9 @@ if ($_SESSION['user_id'] != 1) {
                 url: 'scripts/userAuth',
                 dataType: 'json',
                 type: 'POST',
-                data: { 
+                data: {
                     id: userID,
-                    auth: authType 
+                    auth: authType
                 },
                 success: function(data) {
                     location.reload();
