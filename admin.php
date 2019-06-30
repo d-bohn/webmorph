@@ -6,10 +6,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/include/main_func.php';
 /* !Display Page */
 /***************************************************/
 
-if ($_SESSION['user_id'] != 1) {
-    header('Location: /');
-    exit;
-}
+// if ($_SESSION['user_id'] != 1) {
+//     header('Location: /');
+//     exit;
+// }
 
 ?><!DOCTYPE html>
 
